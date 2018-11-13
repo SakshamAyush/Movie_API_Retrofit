@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Obtain API key first",Toast.LENGTH_SHORT).show();
         }
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_layout);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final RecyclerView recyclerView =  findViewById(R.id.movies_recycler_view);
+       recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         APIinterface apiservice = APIclient.getClient().create(APIinterface.class);
         retrofit2.Call<MovieResponse> call = apiservice.getTopRatedMovies(API_KEY);
